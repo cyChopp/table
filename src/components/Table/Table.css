@@ -1,0 +1,293 @@
+/* Ensure consistent box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Container for the entire component */
+.tree-table-container {
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 0 24px;
+  font-family: "Poppins", sans-serif;
+  color: #1f2937;
+}
+
+/* Filter button container */
+.filter-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+
+/* Filter button */
+.filter-button {
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 21px;
+  background-color: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-button:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Filter icon */
+.filter-icon {
+  font-family: "Material Icons";
+  font-size: 18px;
+}
+
+/* Filter modal */
+.filter-modal {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 21px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 10;
+  width: 300px;
+}
+
+/* Filter modal content */
+.filter-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Filter group */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Filter label */
+.filter-label {
+  font-size: 14px;
+  color: #374151;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Filter select */
+.filter-select {
+  padding: 10px 30px 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 21px;
+  font-size: 14px;
+  color: #374151;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  appearance: none; /* Remove default arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%23374151" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+/* Filter input */
+.filter-input {
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 21px;
+  font-size: 14px;
+  color: #374151;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.filter-select:focus,
+.filter-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Apply filters button */
+.apply-filters-button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 21px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.apply-filters-button:hover {
+  background-color: #1e40af;
+}
+
+/* Table container */
+.table-container {
+  background-color: #ecfdf5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Table styles */
+.tree-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed; /* Locks column widths */
+}
+
+/* Table header row */
+.table-header-row {
+  color: #1f2937;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #f8f8f8;
+}
+
+/* Table header cells */
+.table-header-cell {
+  padding: 16px; /* Match base padding of td */
+  text-align: left; /* Explicitly left-align */
+  font-weight: 300;
+  margin: 0; /* Reset any default margins */
+}
+
+.table-header-cell:first-child {
+  border-top-left-radius: 12px;
+}
+
+.table-header-cell:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Column widths */
+.expand-column {
+  width: 150px;
+}
+
+.status-column {
+  width: 200px;
+}
+
+.name-column {
+  width: 250px;
+}
+
+.email-column {
+  width: 350px;
+}
+
+.balance-column {
+  width: 200px;
+}
+
+/* Table row */
+.table-row {
+  background-color: #ffffff;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.table-row.hovered {
+  background-color: #f1f5f9;
+}
+
+/* Table cell */
+.table-cell {
+  padding: 16px;
+  text-align: left; /* Explicitly left-align */
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Expand cell */
+.expand-cell {
+  padding: 16px;
+  text-align: left; /* Left-align to match content */
+  overflow: hidden;
+}
+
+/* Expand button */
+.expand-button {
+  background-color: #f1f5f9;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #2563eb;
+  transition: color 0.3s, background-color 0.3s, transform 0.2s;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-button:hover {
+  color: #1e40af;
+  background-color: #e2e8f0;
+}
+
+/* Expand icon */
+.expand-icon {
+  font-family: "Material Icons";
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  margin: 0;
+}
+
+.status-badge.active {
+  background-color: #bceecf;
+  color: #245b39;
+}
+
+.status-badge.inactive {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* name cell */
+.name-cell {
+  font-weight: normal;
+  color: #1f2937;
+}
+
+.name-cell.has-children {
+  font-weight: 600;
+}
+
+/* email cell */
+.email-cell {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+/* balance cell */
+.balance-cell {
+  font-family: "Roboto Mono", monospace;
+  color: #1f2937;
+}
