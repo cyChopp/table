@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Overview
 
-A React-based table component that displays hierarchical data with expandable rows and filtering by isActive, balance, and email. Built with pure React and CSS, it handles unordered data and supports a tree-like structure with no external libraries except React.
-=======
 ## Overview
 
 A React-based table component that displays hierarchical data with expandable rows and filtering by isActive, balance, and email. Built with pure React and CSS, it handles unordered data and supports a tree-like structure with no external libraries except React, per the task requirements.
@@ -24,4 +20,3 @@ A React-based table component that displays hierarchical data with expandable ro
      - Click "Apply Filters" to update.
    - **Hierarchy**: Child rows.
    - **Sorting**: Data sorted by `id` for consistent display.
->>>>>>> 7f2f2fa9964353fc6d8eebc0a94bfe96cf028d0a
